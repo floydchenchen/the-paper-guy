@@ -8,8 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from './Menu';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import firebase from 'firebase';
-import config from "../../config/constants";
+import firebase from '../Firebase';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import BudgetPage from "../budget/BudgetPage";
 import TransactionPage from "../transactions/TransactionPage";
@@ -22,12 +21,6 @@ import { createBrowserHistory } from "history";
 
 const PUBLIC_URL = process.env.PUBLIC_URL || "";
 const history = createBrowserHistory();
-
-firebase.initializeApp(
-  {
-    apiKey: config.apiKey,
-    authDomain: config.authDomain
-  });
 
 const styles = {
   root: {

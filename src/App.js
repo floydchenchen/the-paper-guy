@@ -2,13 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 import PropTypes from 'prop-types';
 import AppBar from './structure/AppBar';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {Redirect} from 'react-router';
-import OverviewPage from './overview/OverviewPage';
-import PlanPage from './plan/PlanPage';
-import TransactionPage from './transactions/TransactionPage';
-import BudgetPage from './budget/BudgetPage';
-import Login from './overview/Login';
 import {withStyles} from "@material-ui/core/styles/index";
 
 const PUBLIC_URL = process.env.PUBLIC_URL || "";

@@ -52,7 +52,7 @@ class Menu extends React.Component {
       <div className={classes.list}>
         <List>
           {menus.map((menu) => (
-            <Link key={menu.url} to={menu.url} className={classes.link} cost>
+            <Link key={menu.url} to={menu.url} className={classes.link} cost={true}>
               <ListItem button key={menu.name}>
                 <ListItemIcon>{menu.icon}</ListItemIcon>
                 <ListItemText primary={menu.name}/>

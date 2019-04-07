@@ -4,23 +4,8 @@ import {withStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import {Link} from "react-router-dom";
-
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import FolderIcon from '@material-ui/icons/Folder';
-import DeleteIcon from '@material-ui/icons/Delete';
 
 const styles = {
   link: {
@@ -60,7 +45,7 @@ class TransactionItem extends Component {
 
     return (
       <List>
-        <Link key={this.props.itemId} to={"/transactions/" + this.props.itemId} className={classes.link}>
+        <Link key={this.props.key} to={"/transactions/" + this.props.key} className={classes.link}>
           <ListItem className={classes.listItem}>
             <ListItemText className={classes.firstDiv}
                           primary={this.props.date}

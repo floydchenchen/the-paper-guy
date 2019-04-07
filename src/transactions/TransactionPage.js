@@ -1,7 +1,16 @@
 import React, {Component} from 'react';
 import TransactionItem from './TransactionItem';
+import firebase from '../Firebase';
 
-class TransactionPage extends Component{
+class TransactionPage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.db = firebase.firestore().collection("react");
+    this.state = {
+      currentItems: []
+    };
+  }
 
   item1 = {
     date: "03/17/2019",
@@ -19,17 +28,43 @@ class TransactionPage extends Component{
     itemId: 2
   };
 
+  onCollectionUpdate = (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const {amount, category, date, spent, timeStamp, title} = doc.data();
+      this.setState((prevState) => ({
+        currentItems: [...prevState.currentItems, {
+          key: doc.id,
+          price: amount,
+          category,
+          date,
+          spent,
+          timeStamp,
+          title,
+        }]
+      }))
+    });
+  };
+
+  componentDidMount() {
+    // this.db.onSnapshot(this.onCollectionUpdate);
+    this.db.orderBy("timeStamp").limit(10).onSnapshot(this.onCollectionUpdate);
+  }
+
   render() {
+    let items = this.state.currentItems.map((item) =>
+      <TransactionItem
+        key={item.key}
+        date={item.date}
+        title={item.title}
+        category={item.category}
+        price={item.price}
+        credit={item.spent}
+      />
+    );
+
     return (
       <div>
-        <TransactionItem
-          {...this.item1}
-          credit={this.item1.price < 0}
-        />
-        <TransactionItem
-          {...this.item2}
-          credit={this.item2.price < 0}
-        />
+        {this.state.currentItems.length < 1 ? <div>Loading</div> : items}
       </div>
     );
   }
