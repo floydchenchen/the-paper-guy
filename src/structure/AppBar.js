@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from './Menu';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from 'firebase';
-import config from "../../config/constants";
+import config from "../config/constants";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import BudgetPage from "../budget/BudgetPage";
 import TransactionPage from "../transactions/TransactionPage";
