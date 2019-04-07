@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # configs and api keys
-/config
+/src/config
 
 # webstorm
 /.idea
