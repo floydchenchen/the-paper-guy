@@ -114,6 +114,7 @@
       <find>redirect</find>
       <find>styles</find>
       <find>classes</find>
+      <find>apikey</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
