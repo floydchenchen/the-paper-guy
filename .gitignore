@@ -24,3 +24,6 @@ yarn-error.log*
 
 # configs and api keys
 /config
+
+# webstorm
+.idea
