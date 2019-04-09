@@ -45,7 +45,7 @@ class TransactionItem extends Component {
 
     return (
       <List>
-        <Link key={this.props.key} to={"/transactions/" + this.props.key} className={classes.link}>
+        <Link key={this.props.itemId} to={"/transactions/" + this.props.itemId} className={classes.link}>
           <ListItem className={classes.listItem}>
             <ListItemText className={classes.firstDiv}
                           primary={this.props.date}
@@ -59,7 +59,7 @@ class TransactionItem extends Component {
               primary={
                 <Typography
                   className={this.props.credit ? classes.credit : classes.debit}>
-                  {this.props.credit ? this.props.price : "+" + this.props.price}
+                  {this.props.credit ? "-" + this.props.price : "+" + this.props.price}
                 </Typography>}
             />
           </ListItem>

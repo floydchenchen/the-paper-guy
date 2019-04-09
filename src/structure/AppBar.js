@@ -12,6 +12,7 @@ import firebase from '../Firebase';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import BudgetPage from "../budget/BudgetPage";
 import TransactionPage from "../transactions/TransactionPage";
+import TransactionDetail from "../transactions/TransactionDetail";
 import OverviewPage from "../overview/OverviewPage";
 import PlanPage from "../plan/PlanPage";
 import {Redirect} from 'react-router';
@@ -113,6 +114,7 @@ class ButtonAppBar extends Component {
           <Route exact path="/plan" component={PlanPage}/>
           <Route exact path="/overview" component={OverviewPage}/>
           <Route exact path="/login" component={Login}/>
+          <Route exact path="/transactions/:id" component={TransactionDetail}/>
         </div>
       </Router>
     );
